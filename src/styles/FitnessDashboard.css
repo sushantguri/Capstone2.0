@@ -1,0 +1,175 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f3f4f6;
+}
+
+.dashboard-container {
+  padding: 20px;
+}
+
+.dashboard-header {
+  background-color: #008080;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.dashboard-nav button {
+  margin-left: 15px;
+  padding: 8px 12px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dashboard-main {
+  margin-top: 20px;
+}
+
+.dashboard-main h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.dashboard-main p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.summary-cards,
+.detail-cards,
+.goal-cards {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.summary-cards {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.detail-cards {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.goal-cards {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.card,
+.goal-card,
+.bmi-calculator {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.card-value {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #666;
+  white-space: pre-line;
+}
+
+.goal-card h4 {
+  margin: 0 0 5px;
+  font-size: 16px;
+}
+
+.goal-value {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 8px;
+  border-radius: 5px;
+}
+
+.progress-fill.green {
+  background-color: #4caf50;
+  width: 52%;
+}
+.progress-fill.blue {
+  background-color: #2196f3;
+  width: 60%;
+}
+.progress-fill.purple {
+  background-color: #9c27b0;
+  width: 70%;
+}
+.progress-fill.red {
+  background-color: #f44336;
+  width: 81%;
+}
+.progress-fill.orange {
+  background-color: #ff9800;
+  width: 22%;
+}
+
+.bmi-calculator h3 {
+  margin-bottom: 10px;
+}
+
+.bmi-input {
+  width: 70%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.bmi-button {
+  width: 74%;
+  padding: 10px;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bmi-button:hover {
+  background-color: #006666;
+}
+
+.dashboard-footer {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
+}
