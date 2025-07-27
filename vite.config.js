@@ -11,7 +11,16 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    sourcemap: true,
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          router: ["react-router-dom"],
+          charts: ["react-chartjs-2", "chart.js", "recharts"],
+        },
+      },
+    },
   },
   define: {
     "process.env": {},

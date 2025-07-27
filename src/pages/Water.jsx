@@ -19,8 +19,11 @@ const getTodayDate = () => new Date().toLocaleDateString()
 
 const Water = () => {
   const [allIntake, setAllIntake] = useState(() => {
-    const saved = localStorage.getItem("waterIntake")
-    return saved ? JSON.parse(saved) : []
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("waterIntake")
+      return saved ? JSON.parse(saved) : []
+    }
+    return []
   })
 
   const today = getTodayDate()
@@ -29,7 +32,9 @@ const Water = () => {
   const dailyGoal = Number.parseInt(import.meta.env.VITE_DEFAULT_WATER_GOAL) || 8
 
   useEffect(() => {
-    localStorage.setItem("waterIntake", JSON.stringify(allIntake))
+    if (typeof window !== "undefined") {
+      localStorage.setItem("waterIntake", JSON.stringify(allIntake))
+    }
   }, [allIntake])
 
   useEffect(() => {
@@ -37,8 +42,6 @@ const Water = () => {
     const reminder = setInterval(() => {
       if (import.meta.env.VITE_DEBUG_MODE === "true") {
         console.log("💧 Time to drink water and stay hydrated!")
-      } else {
-        alert("💧 Time to drink water and stay hydrated!")
       }
     }, reminderInterval)
     return () => clearInterval(reminder)
